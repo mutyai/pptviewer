@@ -1,0 +1,79 @@
+{
+	"name": "muty-pptviewer",
+	"displayName": "Muty PPT Viewer",
+	"description": "Preview PowerPoint files (.pptx, .ppt) in VSCode using LibreOffice conversion",
+	"version": "1.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mutyai/pptviewer.git"
+	},
+	"publisher": "mutyai",
+	"icon": "assets/logo.png",
+	"keywords": [
+		"vscode",
+		"extension",
+		"powerpoint",
+		"ppt",
+		"pptx",
+		"preview",
+		"libreoffice"
+	],
+	"author": {
+		"name": "MutyAI.Inc."
+	},
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCustomEditor:muty-pptviewer.preview",
+		"onCommand:muty-pptviewer.openPPT"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "muty-pptviewer.openPPT",
+				"title": "Open PowerPoint Preview",
+				"category": "Muty PPT Viewer"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"when": "resourceExtname == '.pptx' || resourceExtname == '.ppt'",
+					"command": "muty-pptviewer.openPPT",
+					"group": "navigation"
+				}
+			]
+		},
+		"customEditors": [
+			{
+				"viewType": "muty-pptviewer.preview",
+				"displayName": "PowerPoint Preview",
+				"priority": "default",
+				"selector": [
+					{
+						"filenamePattern": "*.pptx"
+					},
+					{
+						"filenamePattern": "*.ppt"
+					}
+				]
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.74.0",
+		"@types/node": "16.x",
+		"typescript": "^4.9.4"
+	}
+}
