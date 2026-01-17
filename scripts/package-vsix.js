@@ -85,7 +85,7 @@ function updateProductJson(newSha) {
 		fail(`读取/解析 product.json 失败: ${e.message}`)
 	}
 
-	// product.json 里可能有数组或对象，按用户提供的结构查找并更新
+	// product.json 里可能有数组或对象,按用户提供的结构查找并更新
 	let updated = false
 	const updateEntry = (entry) => {
 		if (entry && entry.name === "muty-pptviewer") {
@@ -117,12 +117,46 @@ function updateProductJson(newSha) {
 	}
 }
 
+function extractVsix() {
+	log("▶️  解压 VSIX ...")
+	const tempDir = path.join(repoRoot, ".vsix_temp")
+	if (fs.existsSync(tempDir)) {
+		fs.rmSync(tempDir, { recursive: true, force: true })
+	}
+	fs.mkdirSync(tempDir)
+
+	try {
+		execSync(`unzip -q ${JSON.stringify(vsixPath)} -d ${JSON.stringify(tempDir)}`, { stdio: "inherit" })
+		const extDir = path.join(tempDir, "extension")
+		if (fs.existsSync(extDir)) {
+			// 确保父目录存在
+			const parent = path.dirname(builtInExtDir)
+			if (!fs.existsSync(parent)) {
+				fs.mkdirSync(parent, { recursive: true })
+			}
+			// 移动 extension -> builtInExtDir
+			// 如果 builtInExtDir 之前被删除了,这里可以直接 rename
+			fs.renameSync(extDir, builtInExtDir)
+			log("✅ VSIX 已解压到 builtInExtDir")
+		} else {
+			fail("VSIX 解压后未发现 extension 目录")
+		}
+	} catch (e) {
+		fail(`解压 VSIX 失败: ${e.message}`)
+	} finally {
+		if (fs.existsSync(tempDir)) {
+			fs.rmSync(tempDir, { recursive: true, force: true })
+		}
+	}
+}
+
 async function main() {
 	runVscePackage()
 	copyVsix()
 	removeBuiltInExtensionDir()
 	const sha = computeSha256()
 	updateProductJson(sha)
+	extractVsix()
 	log("🎉 全部完成")
 }
 
