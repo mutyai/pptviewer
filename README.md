@@ -53,10 +53,10 @@ sudo yum install libreoffice
 
 ---
 
-For a better PowerPoint viewing experience, it is highly recommended to download and use the MutyAI APP: https://www.mutyai.com/
+For a better PowerPoint viewing experience, it is highly recommended to download and use the MutyWork APP: https://www.mutyai.com/
 
 <video controls width="100%">
-  <source src="https://cdn.leibeibei.cn/mutyai-720P.mp4" type="video/mp4">
+  <source src="https://cdn.muty.work/muty-agent.mp4" type="video/mp4">
 </video>
 
 ## 🌐 Support & Links

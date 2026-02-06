@@ -2,7 +2,7 @@
 	"name": "muty-pptviewer",
 	"displayName": "Muty PPT Viewer",
 	"description": "Preview PowerPoint files (.pptx, .ppt) in VSCode using LibreOffice conversion",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mutyai/pptviewer.git"
