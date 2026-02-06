@@ -12,15 +12,20 @@ A VS Code extension to preview PowerPoint files (.pptx, .ppt) directly within VS
 
 ![](https://www.mutyai.com/features/ppt.webp)
 
-## Installation
+## Usage
 
-**Install from Marketplace**
-1. Open VS Code.
-2. Go to the **Extensions** view (`Ctrl+Shift+X` or `Cmd+Shift+X`).
-3. Search for **Muty PPT Viewer**.
-4. Click **Install**.
+1. Open a project containing PowerPoint files in VS Code.
+2. Click on a .pptx or .ppt file in the file explorer.
+3. The file will automatically open as a PDF preview in the editor area.
 
-Alternatively, you can find it on the [VS Code Marketplace](https://marketplace.visualstudio.com/) or [Open VSX Registry](https://open-vsx.org/).
+---
+
+For a better PowerPoint viewing experience, it is highly recommended to download and use the [MutyWork APP](https://www.mutyai.com/) - A local AI Agent for the real work.
+
+<video controls width="100%">
+  <source src="https://cdn.muty.work/muty-agent.mp4" type="video/mp4">
+</video>
+
 
 ### Requirements
 
@@ -43,21 +48,6 @@ sudo apt-get install libreoffice
 # CentOS/RHEL
 sudo yum install libreoffice
 ```
-
-## Usage
-
-1. Open a project containing PowerPoint files in VS Code.
-2. Click on a .pptx or .ppt file in the file explorer.
-3. The file will automatically open as a PDF preview in the editor area.
-4. Use the zoom buttons at the top to control the display.
-
----
-
-For a better PowerPoint viewing experience, it is highly recommended to download and use the MutyWork APP: https://www.mutyai.com/
-
-<video controls width="100%">
-  <source src="https://cdn.muty.work/muty-agent.mp4" type="video/mp4">
-</video>
 
 ## 🌐 Support & Links
 
