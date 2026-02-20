@@ -6,6 +6,19 @@ import * as os from 'os';
 
 export class LibreOfficeConverter {
 	private getLibreOfficePath(): string {
+		// 1. Check configuration
+		const config = vscode.workspace.getConfiguration('muty-pptviewer');
+		const customPath = config.get<string>('libreOfficePath');
+		if (customPath && fs.existsSync(customPath)) {
+			return customPath;
+		}
+
+		// 2. Check environment variable
+		const envPath = process.env.LIBREOFFICE_PATH;
+		if (envPath && fs.existsSync(envPath)) {
+			return envPath;
+		}
+
 		const platform = os.platform();
 
 		if (platform === 'darwin') {

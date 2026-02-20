@@ -199,7 +199,7 @@ export class PPTEditorProvider implements vscode.CustomReadonlyEditorProvider {
 							<div style="font-size: 48px; margin-bottom: 20px;">📄</div>
 							<h2 style="color: #333; margin-bottom: 16px;">LibreOffice Required</h2>
 							<p style="color: #666; margin-bottom: 24px; line-height: 1.6;">
-								To preview PowerPoint files, LibreOffice needs to be installed. Please download and install it to the default system location.
+								To preview PowerPoint files, LibreOffice needs to be installed. Please download and install it to the default system location, or configure the path in VS Code settings (muty-pptviewer.libreOfficePath).
 							</p>
 							<div style="margin-bottom: 24px;">
 								<a href="https://www.libreoffice.org/download/download/" 

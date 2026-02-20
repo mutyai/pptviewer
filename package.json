@@ -2,7 +2,7 @@
 	"name": "muty-pptviewer",
 	"displayName": "Muty PPT Viewer",
 	"description": "Preview PowerPoint files (.pptx, .ppt) in VSCode using LibreOffice conversion",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mutyai/pptviewer.git"
@@ -65,7 +65,17 @@
 					}
 				]
 			}
-		]
+		],
+		"configuration": {
+			"title": "Muty PPT Viewer",
+			"properties": {
+				"muty-pptviewer.libreOfficePath": {
+					"type": "string",
+					"default": "",
+					"description": "Custom path to LibreOffice executable (soffice). If empty, the extension will try to find it automatically."
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
