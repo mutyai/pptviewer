@@ -20,10 +20,10 @@ A VS Code extension to preview PowerPoint files (.pptx, .ppt) directly within VS
 
 ---
 
-For a better PowerPoint viewing experience, it is highly recommended to download and use the [MutyWork APP](https://www.mutyai.com/) - A local AI Agent for the real work.
+For a better PowerPoint viewing experience, it is highly recommended to download and use the [MutyNote APP](https://www.mutyai.com/) - AI-powered note-taking app that unleashes your ideas.
 
 <video controls width="100%">
-  <source src="https://cdn.muty.work/muty-agent.mp4" type="video/mp4">
+  <source src="https://cdn.muty.work/mutynote.mp4" type="video/mp4">
 </video>
 
 
